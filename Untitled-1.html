@@ -20,30 +20,58 @@
       const czas = document.querySelector("#czas");
       const dodaj = document.querySelector("#dodaj");
       const display = document.querySelector("#display");
-      let i = 0;
+      const list = []
+      
+
+
         function fn1(){
         const todo={        
         name: nazwa.value,
         czas: czas.value,
         compleate: false
       };
-   
+      list.push(todo);
+      for (const obj of list) {
       for(const key in todo){
-                display.innerHTML += todo[key];
+                display.innerHTML += obj[key];
                 display.innerHTML += " ";
 
       }
-
-
-      
-            display.innerHTML +=`<label for="check"><input type="checkbox" id="check"/></label>`;
+      display.innerHTML +=`<label for="check"><input type="checkbox" id="check"/></label>`;
             display.innerHTML +=`<button id="usun">usun</button>`;
             display.innerHTML += "<br>"; 
             
             const check = document.querySelector("#check");
-console.log(check.value);
+            const usun = document.querySelector("#usun");
+            
+break;
+      }
+      
+
+      
+            
+            
+            usun.addEventListener("click", fn2);
     
-        
+            function fn2(){
+                display.innerHTML = "";
+                const x = list.splice(1, 1);
+                for (const obj of list) {
+      for(const key in todo){
+                display.innerHTML += obj[key];
+                display.innerHTML += " ";
+
+      }
+      display.innerHTML +=`<label for="check"><input type="checkbox" id="check"/></label>`;
+            display.innerHTML +=`<button id="usun">usun</button>`;
+            display.innerHTML += "<br>"; 
+            
+            const check = document.querySelector("#check");
+            const usun = document.querySelector("#usun");
+            
+break;
+      }
+            }
         
         
 }
