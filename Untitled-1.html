@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <main>
+    <label for="nazwa">
+        podaj nazwe przypomnienia: <input type="text" id="nazwa"/>
+    </label>
+
+    <label for="czas">
+        podaj do kiedy można wykonać: <input type="date" id="czas"/>
+    </label>
+    <button id="dodaj">dodaj</button>
+    </main>
+    <section>
+      <p id="display"></p>
+    </section>
+    <script>
+      const nazwa = document.querySelector("#nazwa");
+      const czas = document.querySelector("#czas");
+      const dodaj = document.querySelector("#dodaj");
+      const display = document.querySelector("#display");
+      let i = 0;
+        function fn1(){
+        const todo={        
+        name: nazwa.value,
+        czas: czas.value,
+        compleate: false
+      };
+   
+      for(const key in todo){
+                display.innerHTML += todo[key];
+                display.innerHTML += " ";
+
+      }
+
+
+      
+            display.innerHTML +=`<label for="check"><input type="checkbox" id="check"/></label>`;
+            display.innerHTML +=`<button id="usun">usun</button>`;
+            display.innerHTML += "<br>"; 
+            
+            const check = document.querySelector("#check");
+console.log(check.value);
+    
+        
+        
+        
+}
+
+
+
+    dodaj.addEventListener("click", fn1);
+    
+    </script>
+  </body>
+</html>
